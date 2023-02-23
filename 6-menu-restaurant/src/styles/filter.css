@@ -1,0 +1,29 @@
+.filter-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5% 0;
+}
+
+.filter-content{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.button{
+    border: 2px solid transparent;
+    background-color: transparent;
+    color: #c9a134;
+    font-size: 1rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    
+}
+
+.button.active{
+    border-color: rgb(28, 98, 122);
+    border-radius: 5px;
+}

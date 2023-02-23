@@ -1,0 +1,34 @@
+.title{
+    text-align: center;
+}
+
+.app{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    box-shadow: 5px 5px 8px black;
+    background-color: rgba(255, 255, 255, .3);
+    flex-direction: column;
+    margin: 2rem 3rem;
+    padding: 2rem;
+}
+
+.mensagem{
+    padding: 5px 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 1rem 0;
+}
+
+.verde{
+    color: darkgreen;
+}
+
+.vermelho{
+    color: darkred;
+}

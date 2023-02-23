@@ -1,0 +1,29 @@
+.app{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 60vw;
+    height: 80vh;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.title::before{
+    content: '';
+    border: 3px solid lightskyblue;
+    width: 50%;
+    position: absolute;
+    bottom: 0;
+}
+
+
+

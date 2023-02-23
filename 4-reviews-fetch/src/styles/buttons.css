@@ -1,0 +1,16 @@
+.button{
+    border: none;
+    background-color: transparent;
+    color: rgb(31, 120, 175);
+    font-size: 2rem;
+    margin: 10px;
+    cursor: pointer;
+}
+
+
+.buttons-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

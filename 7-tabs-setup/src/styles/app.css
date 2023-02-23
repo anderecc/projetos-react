@@ -1,0 +1,49 @@
+.app{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    row-gap: 5rem;
+    padding: 6rem;
+}
+
+.loading{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.title{
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+.title::before{
+    content: '';
+    border-bottom: 3px solid rgb(15, 100, 149);
+    margin: 0 auto;
+    width: 60%;
+    position: absolute;
+    bottom: 0;
+}
+
+.container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 60vh;
+
+}
