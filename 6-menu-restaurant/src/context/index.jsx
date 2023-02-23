@@ -9,7 +9,6 @@ let AppProvider = ({ children }) => {
 
     useEffect(() => {
         setState(data);
-        document.title = 'Menu restaurant';
     }, [state]);
 
     return (

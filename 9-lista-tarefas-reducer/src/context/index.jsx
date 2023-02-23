@@ -15,7 +15,6 @@ let AppProvider = ({ children }) => {
     let [state, dispatch] = useReducer(reducer, initialState);
     useEffect(() => {
         dispatch(getTarefas());
-        document.title = 'Lista de tarefas com Reducer';
         if (state.mensagem) {
             setTimeout(() => {
                 dispatch(removeMensagem());
