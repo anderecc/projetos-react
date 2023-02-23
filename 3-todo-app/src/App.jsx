@@ -3,10 +3,15 @@ import ListItem from './components/ListItem';
 import AddTodo from './components/AddTodo';
 import './styles/app.css';
 
-const App = () => {
+function useTitle(title) {
     useEffect(() => {
-        document.title = 'Todo App';
-    }, []);
+        document.title = title;
+    }, [title]);
+}
+
+const App = () => {
+    useTitle('React Todo');
+
     return (
         <>
             <h1 className="title">

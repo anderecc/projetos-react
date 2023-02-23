@@ -55,15 +55,6 @@ let Filter = () => {
                         Shakes
                     </button>
                 </li>
-                <li>
-                    <button
-                        className={`button `}
-                        id="dinner"
-                        onClick={handleSelectType}
-                    >
-                        Dinner
-                    </button>
-                </li>
             </ul>
         </div>
     );

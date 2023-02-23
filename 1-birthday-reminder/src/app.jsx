@@ -1,14 +1,18 @@
 import People from './components/people';
 import './styles/app.css';
 import data from './data/data';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+function useTitle(title) {
+    useEffect(() => {
+        document.title = title;
+    }, [title]);
+}
 
 function App() {
     let [state, setState] = useState(data);
+    useTitle('React Birthday');
 
-    function resetAll() {
-        setState('');
-    }
     function renderPeoples() {
         return state === ''
             ? null

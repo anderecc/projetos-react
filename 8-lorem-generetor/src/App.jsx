@@ -1,8 +1,15 @@
+import { useEffect } from 'react';
 import { useContext } from 'react';
 import { AppContext } from './context';
 import './styles/app.css';
+function useTitle(title) {
+    useEffect(() => {
+        document.title = title;
+    }, [title]);
+}
 
 function App() {
+    useTitle('React Lorem Generetor');
     let { state, loading, value, setValue, getLorems } = useContext(AppContext);
 
     let handleGenerate = (e) => {

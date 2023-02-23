@@ -1,10 +1,18 @@
+import { useEffect } from 'react';
 import { useContext } from 'react';
 import Form from './components/Form';
 import Tarefas from './components/Tarefas';
 import { AppContext } from './context';
 import './styles/app.css';
 
+function useTitle(title) {
+    useEffect(() => {
+        document.title = title;
+    }, [title]);
+}
+
 function App() {
+    useTitle('React Lista de Tarefas');
     let { state } = useContext(AppContext);
 
     return (

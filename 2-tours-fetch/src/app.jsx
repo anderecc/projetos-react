@@ -5,7 +5,14 @@ import './styles/app.css';
 
 let url = 'https://course-api.com/react-tours-project';
 
+function useTitle(title) {
+    useEffect(() => {
+        document.title = title;
+    }, [title]);
+}
+
 function App() {
+    useTitle('React Tours');
     let [state, setState] = useState([]);
     let [loading, setLoading] = useState(false);
 
