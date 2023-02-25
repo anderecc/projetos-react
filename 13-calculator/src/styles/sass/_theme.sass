@@ -1,0 +1,48 @@
+@import 'variables'
+@import 'mixins'
+.theme
+    text-transform: uppercase
+    display: flex
+    align-items: flex-end
+    justify-content: space-between
+    min-width: 45%
+    &-container
+        @include flex-center
+        &-option
+            @include flex-center
+            justify-content: center
+            flex-direction: column
+            .theme-select
+                width: 30px
+                height: 30px
+                @include flex-center
+                justify-content: center
+                .theme-selected
+                    width: 60%
+                    height: 60%
+                    border-radius: 50%
+
+.rounded-left
+    border-top-left-radius: 50%
+    border-bottom-left-radius: 50%
+.rounded-right
+    border-top-right-radius: 50%
+    border-bottom-right-radius: 50%
+
+.theme-calc-1
+    .theme-select
+        background-color: $VeryDarkDesaturatedBlue2
+        .theme-selected
+            background-color: $Red
+
+.theme-calc-2
+    .theme-select
+        background-color: $GrayishRed
+        .theme-selected
+            background-color: $Orange
+
+.theme-calc-3
+    .theme-select
+        background-color: $VeryDarkViolet2
+        .theme-selected
+            background-color: $PureCyan
