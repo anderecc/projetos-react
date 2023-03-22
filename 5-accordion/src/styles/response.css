@@ -1,0 +1,7 @@
+.response-container{
+    padding: 5px 10px;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, .2);
+    font-family: sans-serif;
+border-radius: 5px;
+}

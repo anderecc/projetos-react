@@ -1,0 +1,63 @@
+.container
+    width: 100%
+
+    .sort_container
+        display: flex
+        width: 100%
+        align-items: center
+        justify-content: space-between
+        padding: 0 5rem
+        gap: 1rem
+    .buttons_container
+        display: flex
+        align-items: center
+        gap: 1rem
+        font-size: 1.2rem
+        color: #102A42
+        span
+            display: flex
+            align-items: center
+            justify-content: center
+            cursor: pointer
+            padding: 5px
+            border-radius: 5px
+            background-color: rgba(0, 0, 0, .1)
+            transition: all .3s
+        span.active
+            background-color: #102A42
+            color: rgba(255,255 ,255 , .5 )
+    .found
+        color: #324d67
+        font-weight: 500
+    hr
+        width: 50%
+    .sort_by
+        color: #324d67
+        font-weight: 500
+        display: flex
+        align-items: center
+        justify-content: center
+        gap: 1rem
+        select
+            outline: none
+            border: none
+            background-color: #324d6731
+            font-size: 1rem
+            border-radius: 5px
+            padding: 5px
+
+.products_container
+    display: flex
+    align-items: flex-start
+    justify-content: flex-start
+    gap: 2rem
+    padding: 3rem 5rem
+    flex-wrap: wrap
+    min-height: 100%
+
+.products_container.loading
+    align-items: center
+
+.no_matched
+    font-size: 1.4rem
+    color: #102A42

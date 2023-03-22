@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #481800;
+    border-radius: 10px;
+    box-shadow:5px 5px 8px black;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.title{
+    width: 20%;
+    color: white;
+    font-weight: bold;
+}
+
+.content{
+    width: 70%;
+    flex-wrap: wrap;
+}

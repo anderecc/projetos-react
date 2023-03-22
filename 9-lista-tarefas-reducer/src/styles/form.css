@@ -1,0 +1,25 @@
+.button-form{
+    border-color: black !important;
+    font-weight: bold;
+}
+
+.input{
+    padding: 5px 10px;
+    border: 2px solid black;
+    outline: none;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, .3);
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    transition: all .3s;
+}
+
+.input:focus{
+    background-color: rgba(0, 0, 0, .1);
+    color: rgba(0, 0, 0, .9);
+}
+
+.input::placeholder{
+    font-weight: 300;
+}

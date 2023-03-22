@@ -1,0 +1,23 @@
+.people{
+    list-style: none;
+display: flex;
+width: 100%;
+margin-bottom: 10px;
+
+align-items: center;}
+
+.image{
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    margin-right: 10%;
+}
+
+.container-name{
+    text-align: left;
+}
+
+p{
+    font-family: monospace;
+    font-size: .9rem;
+}

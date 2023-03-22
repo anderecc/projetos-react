@@ -1,0 +1,19 @@
+.loading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: absolute;
+    font-size: 10rem;
+    animation: loading 1s infinite linear   ;
+    color: #134647;
+}
+
+@keyframes loading {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

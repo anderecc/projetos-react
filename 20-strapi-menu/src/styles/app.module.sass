@@ -1,0 +1,43 @@
+@import '_mixins'
+
+.container
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    justify-content: center
+    img
+        @include mobile
+            display: none
+
+.content
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    flex-direction: column
+    gap: 2rem
+    width: 50%
+    padding-right: 5rem
+    @include mobile
+        width: 80%
+        padding-right: 0
+
+    h3
+        font-size: 3.5rem
+        color: #102A42
+        @include mobile
+            font-size: 2.5rem
+
+    p
+        color: rgba(86, 88, 103, 0.6)
+        font-weight: 400
+        font-size: 1.3rem
+    button
+        color: white
+        background-color: rgba(0, 0, 0, .6)
+        border-radius: 5px
+        padding: .5rem .7rem
+        font-size: 1rem
+        transition: all .3s
+        border: none
+        &:hover
+            background-color: rgba(0, 0, 0, 1)

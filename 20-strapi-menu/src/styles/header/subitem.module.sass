@@ -1,0 +1,20 @@
+@import '../_mixins'
+
+.content
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 2rem
+    @include mobile
+        flex-wrap: wrap
+
+    li
+        a
+            display: flex
+            gap: .5rem
+            color: #496279
+            transition: color .3s
+            &:hover
+                color: #54189d
+            @include mobile
+                color: #ffffffbc

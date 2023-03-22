@@ -1,0 +1,39 @@
+@import './_mixins'
+
+.container
+    display: flex
+    min-height: 10vh
+    flex-wrap: wrap
+    align-items: center
+    justify-content: space-between
+    padding: 2rem 7rem
+    font-family: sans-serif
+    box-shadow: 5px 5px 8px black
+    @include mobile
+        padding: 2rem
+        justify-content: center
+        gap: 1rem
+    p
+        font-size: 1.7rem
+        font-weight: bold
+        color: darkgreen
+        span
+            color: rgba(0, 0, 0, .7)
+
+.navLinks
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 2rem
+    flex-wrap: wrap
+    @include mobile
+        justify-content: center
+        width: 100%
+    li
+        a
+            color: black
+            font-weight: 600
+            font-size: 1.4rem
+            transition: all .3s
+            &:hover
+                color: darkgreen

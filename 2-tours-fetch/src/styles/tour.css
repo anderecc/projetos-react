@@ -1,0 +1,90 @@
+.li-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 10px 0 5% 0;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+    font-family: sans-serif;
+
+}
+.infos-container{
+    padding: 0 15px 15px  ;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.info{
+    margin: 15px 0  ;
+}
+
+.info button {
+    border: none;
+    border-bottom: 1px solid  rgb(25, 134, 171);
+    background-color: transparent;
+    color: rgb(25, 134, 171);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.info button:hover{
+    color: rgb(22, 94, 118);
+    border-bottom: 1px solid  rgb(22, 94, 118);
+
+}
+
+
+.image{
+    max-width: 100%;
+    margin-bottom: 15px;
+}
+
+.name-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+    font-family: monospace;
+}
+.name{
+    letter-spacing: 2px ;
+    font-size: 1.3rem;
+
+}
+
+.price{
+    font-size: 1rem;
+    border-radius: 5px;
+    padding:5px 15px;
+    background-color: lightblue;
+    font-weight: bold;
+    color: rgb(66, 110, 125);
+}
+
+.button{
+    padding: 8px 15px;
+    border: 2px solid rgb(162, 19, 19);
+    background-color: transparent;
+    border-radius: 5px;
+    color: rgb(117, 31, 31);
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .3s;
+    
+}
+
+.button:hover{
+    background-color: rgba(217, 121, 121, 0.389);
+}
+
+.button:active{
+    transform: scale(.97);
+}

@@ -1,0 +1,112 @@
+.container
+    display: flex
+    gap: 2rem
+
+.images_container
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 1rem
+    flex-direction: column
+    .image_hero
+        width: 650px
+        height: 500px
+        background-size: cover
+        background-position: center
+        border-radius: 10px
+    div
+        display: flex
+        align-items: center
+        width: 100%
+        justify-content: space-between
+        img
+            cursor: pointer
+            border-radius: 5px
+            width: 115px
+            height: 100px
+            border: solid 2px transparent
+        img.active
+            border-color: #AB7A5F
+
+.at_infos
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    justify-content: space-between
+    gap: 1rem
+    color: #324d67
+
+.name
+    font-size: 2.8rem
+    color: #102A42
+
+.reviews_container
+    font-size: 1rem
+
+.price
+    font-weight: bold
+    font-size: 1.5rem
+    color: #AB7A5F
+
+.description
+    font-weight: 500
+    font-size: 1.3rem
+
+.available, .brand, .colors
+    font-weight: bold
+    color: #102A42
+    font-size: 1.2rem
+    span
+        font-weight: 500
+
+.qtdy_container
+    font-size: 2rem
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 1rem
+    span
+        width: 15px
+    button
+        font-weight: bold
+        border: none
+        font-size: 2.5rem
+        padding: 5px 10px
+        background-color: transparent
+        cursor: pointer
+        transition: all .3s
+        &:active
+            transform: scale(.97)
+
+.button_add_cart
+    padding: 10px 15px
+    color: white
+    border: none
+    cursor: pointer
+    border-radius: 5px
+    background-color: #AB7A5F
+    font-weight: 400
+    text-transform: uppercase
+    transition: all .3s
+    &:hover
+        background-color: #ab7a5fb7
+        color: rgba(0, 0, 0, .7)
+
+.colors_container
+    display: flex
+    gap: 1rem
+
+    .colors_content
+        display: flex
+        gap: .5rem
+        li
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 25px
+            height: 25px
+            border-radius: 50%
+            font-size: 0
+            cursor: pointer
+        li.active
+            font-size: 1rem

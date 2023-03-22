@@ -1,0 +1,23 @@
+@import './_mixins'
+
+.container
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 10rem
+    width: 20%
+    @include mobile
+        width: 50%
+    color: darkgreen
+    position: absolute
+    left: 0
+    right: 0
+    top: calc( 50% - 5rem )
+    margin: auto
+    animation: spinner infinite linear 1s
+
+@keyframes spinner
+    0%
+        transform: rotate(0)
+    100%
+        transform: rotate(360deg)

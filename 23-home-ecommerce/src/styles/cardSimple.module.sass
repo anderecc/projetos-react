@@ -1,0 +1,43 @@
+.container
+    width: 350px
+    display: flex
+    gap: 1rem
+    flex-direction: column
+    .image_container
+        height: 225px
+        background-size: cover
+        background-position: center
+        transition: all .3s
+        border-radius: 5px
+        div
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 100%
+            height: 100%
+            a
+                font-size: 1.4rem
+                padding: 1rem
+                background-color: #AB7A5F
+                border-radius: 50%
+                color: white
+                display: flex
+                align-items: center
+                justify-content: center
+                visibility: hidden
+        &:hover
+            div
+                background-color: rgba(0, 0, 0, .4)
+                a
+                    visibility: visible
+    .infos
+        display: flex
+        align-items: center
+        justify-content: space-between
+        font-size: 1.1rem
+        font-weight: 600
+        .name
+            color: #102A42
+            letter-spacing: 1px
+        .price
+            color: #AB7A5F

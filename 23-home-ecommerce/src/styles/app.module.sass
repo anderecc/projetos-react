@@ -1,0 +1,177 @@
+.container
+    display: flex
+    flex-direction: column
+    min-height: calc( 100vh - 200px )
+
+.button
+    padding: 10px 15px
+    color: white
+    border: none
+    cursor: pointer
+    border-radius: 5px
+    background-color: #AB7A5F
+    font-weight: 400
+    text-transform: uppercase
+    transition: all .3s
+    &:hover
+        background-color: #ab7a5fb7
+        color: rgba(0, 0, 0, .7)
+
+// SECTION INTRO
+
+.sc_intro
+    display: grid
+    align-items: center
+    grid-template-columns: repeat(2, 1fr)
+    gap: 2rem
+    padding: 5rem 5rem 8rem 5rem
+
+.at_images
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    .hero
+        width: 450px
+        border-radius: 10px
+    .hero_2
+        width: 300px
+        position: absolute
+        left: 10%
+        bottom: 0
+        border-radius: 10px
+    &::before
+        position: absolute
+        content: ''
+        width: 60%
+        height: 60%
+        left: 15%
+        bottom: 0
+        border-radius: 10px
+        background-color: #DECBC0
+        z-index: -1
+
+.at_intro
+    display: flex
+    align-items: flex-start
+    justify-content: center
+    gap: 1rem
+    flex-direction: column
+    padding-right: 3rem
+    h3
+        font-size: 3rem
+        color: #102A42
+    p
+        color: #6182A1
+        font-size: 1.3rem
+
+// SEACTION FEATURED
+
+.sc_featured
+    padding: 5rem
+    background-color: #F1F5F8
+    display: flex
+    justify-content: space-between
+    flex-direction: column
+    gap: 2rem
+    align-items: center
+    .title
+        font-size: 3rem
+        position: relative
+        padding: .5rem
+        color: #102A42
+        &::before
+            content: ''
+            position: absolute
+            left: 0
+            right: 0
+            margin: auto
+            bottom: 0
+            border-bottom: 4px solid #AB7A5F
+            width: 30%
+
+.at_cards
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    flex-wrap: wrap
+    gap: 3rem
+
+// SC INSTITUTIONAL
+
+.sc_inst
+    background-color: #EADED7
+    padding: 5rem 5rem 10rem 5rem
+    display: grid
+    position: relative
+    align-items: center
+    grid-template-columns: repeat(2, 1fr)
+    .title
+        font-size: 3rem
+        font-weight: 600
+        color: #453227
+        width: 70%
+    .info
+        font-size: 1.2rem
+        color: #D69C65
+    .at_inst_container
+        position: absolute
+        display: flex
+        align-items: center
+        justify-content: space-evenly
+        left: 0
+        right: 0
+        margin: auto
+        bottom: -30%
+        article
+            width: 25%
+            background-color: #C5A491
+            color: #453227
+            padding: 1rem
+            text-align: center
+            display: flex
+            align-items: center
+            justify-content: center
+            flex-direction: column
+            gap: 1rem
+            border-radius: 5px
+            span
+                background-color: #EADED7
+                padding: 15px
+                border-radius: 50%
+                display: flex
+                font-size: 2.5rem
+                align-items: center
+                justify-content: center
+            .at_inst_title
+                font-size: 1.5rem
+                font-weight: bold
+
+// SC NEWSLETTER
+
+.sc_newsletter
+    padding: 15rem 5rem 10rem
+    display: flex
+    align-items: flex-start
+    justify-content: center
+    gap: 2rem
+    flex-direction: column
+    .title
+        font-size: 2rem
+        color: #102A42
+        font-weight: 600
+    div
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        p
+            font-size: 1rem
+        form
+            display: flex
+            align-items: center
+            justify-content: center
+            input
+                font-size: 1.3rem
+                height: 100%
+                padding: 0 10px
+            button
+                height: 100%

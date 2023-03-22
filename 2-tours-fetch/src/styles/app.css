@@ -1,0 +1,36 @@
+.app{
+    font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title{
+    margin: 3%;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.title::before{
+    content: '';
+    height: 2px;
+    width: 50%;
+    border-bottom: solid 5px #1b84a1;
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px 30px;
+    box-sizing: border-box;
+}
+
+.list{
+    margin: 50px 100px;
+}

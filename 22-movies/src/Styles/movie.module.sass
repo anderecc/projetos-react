@@ -1,0 +1,55 @@
+@import './_mixins'
+
+.container
+    background-color: #8ab8a8
+    min-height: 100vh
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    @include mobile
+        grid-template-columns: none
+        grid-template-rows: 2fr, 1fr
+    align-items: center
+    padding: 3rem 5rem
+    font-family: sans-serif
+    gap: 2rem
+    img
+        max-width: 100%
+        justify-self: flex-end
+        @include mobile
+            justify-self: flex-start
+        border-radius: 10px
+        background-color: rgba(0, 0, 0, .5)
+
+.content
+    padding-right: 5rem
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+    gap: 2.5rem
+    @include mobile
+        gap: 1rem
+        padding-right: 0
+    height: 100%
+    color: #102A42
+    .title
+        font-size: 2rem
+        @include mobile
+            font-size: 1.5rem
+    .plot
+        font-size: 1.3rem
+        @include mobile
+            font-size: 1rem
+    .released
+        padding: 5px 10px
+        border-radius: 5px
+        background-color: #487aa1
+    .linkHome
+        padding: 10px 10px
+        border-radius: 5px
+        background-color: #3ea3af
+        color: white
+        font-weight: bold
+        transition: all .3s
+        &:hover
+            background-color: #255f65

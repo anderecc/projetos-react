@@ -1,0 +1,27 @@
+@import './_mixins'
+
+.container
+    width: 100%
+    padding: 2rem 0
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    font-family: sans-serif
+    gap: 1rem
+    label
+        font-size: 3rem
+    input
+        width: 30%
+        @include mobile
+            width: 100%
+        padding: .5rem
+        font-size: 1.4rem
+        border: solid 2px transparent
+        outline: none
+        border-radius: 5px
+        background-color: rgba(0, 0, 0, .1)
+        transition: all .3s
+        &:focus
+            background-color: white
+            border-color: black

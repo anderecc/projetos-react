@@ -1,0 +1,26 @@
+.tarefa-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    width: 100%;
+}
+
+.tarefa-container:not(:last-child){
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.tarefa{
+    font-size: 1.3rem;
+}
+
+.button-editar{
+    color: darkgreen;
+    border-color: darkgreen !important;
+}
+
+.button-excluir{
+    color: darkred;
+    border-color: darkred !important;
+}

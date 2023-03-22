@@ -1,0 +1,41 @@
+.container
+    width: 100vw
+    height: 100vh
+    background-color: rgba(0, 0, 0, .4)
+    z-index: 5
+    position: absolute
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: all .5s
+    visibility: visible
+    opacity: 1
+
+    .content
+        padding: 5rem
+        background-color: white
+        display: flex
+        align-items: center
+        justify-content: space-between
+        border-radius: 5px
+        position: relative
+        p, button
+            font-size: 1.5rem
+            font-weight: bold
+        button
+            position: absolute
+            top: 5%
+            right: 5%
+            border: none
+            background-color: transparent
+            color: darkred
+            display: flex
+            align-items: center
+            justify-content: center
+            font-size: 2.5rem
+            cursor: pointer
+
+.modalHidden
+    visibility: hidden
+    transition: all .5s
+    opacity: 0

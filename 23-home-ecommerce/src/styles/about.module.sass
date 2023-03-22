@@ -1,0 +1,36 @@
+.container
+    display: grid
+    min-height: calc( 100vh - 200px )
+    grid-template-columns: repeat(2, 1fr)
+    align-items: center
+    justify-content: center
+    gap: 2rem
+    padding: 8rem 5rem
+    img
+        width: 550px
+        height: 450px
+        border-radius: 10px
+    section
+        height: 100%
+        display: flex
+        align-items: flex-start
+        justify-content: flex-start
+        gap: 2rem
+        flex-direction: column
+        h3
+            font-size: 3rem
+            color: #102A42
+            position: relative
+            padding-bottom: 1rem
+            &::before
+                position: absolute
+                content: ''
+                border-bottom: 5px solid #AB7A5F
+                left: 0
+                bottom: 0
+                width: 30%
+        p
+            color: #1b374a
+            font-size: 1rem
+            line-height: 2
+            font-weight: 600
