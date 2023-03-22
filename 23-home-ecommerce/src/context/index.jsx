@@ -27,6 +27,7 @@ let AppProvider = ({ children }) => {
 
     useEffect(() => {
         getData(dispacth, setData, setLoading);
+        document.title = 'Coooder Shop';
     }, []);
 
     let handleSetCategory = (value) => {
