@@ -1,0 +1,35 @@
+@mixin flex-center
+    display: flex
+    align-items: center
+    justify-content: center
+
+@mixin flex-items-center
+    display: flex
+    align-items: center
+
+@mixin transition-all
+    transition: all .3s
+
+@mixin logo
+    font-size: 2rem
+    font-weight: bold
+    color: $color-title
+    z-index: 1
+
+@mixin button
+    width: 100px
+    height: 40px
+    border: none
+    background-color: $color-title
+    color: white
+    border-radius: 5px
+    cursor: pointer
+    @include transition-all
+    &:hover
+        background-color: $color-green
+    &:disabled
+        background-color: rgba(0, 0, 0, .8)
+
+@mixin mobile
+    @media   ( max-width: 800px )
+        @content

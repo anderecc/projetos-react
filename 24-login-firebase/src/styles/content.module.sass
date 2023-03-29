@@ -1,0 +1,41 @@
+@import '_mixins'
+@import '_variables'
+
+.container
+    padding: 2rem
+    min-height: calc( 100vh - 135px )
+    position: relative
+
+.login
+    @include flex-center
+    flex-direction: column
+    gap: 1rem
+
+.home
+    @include flex-center
+    flex-direction: column
+    gap: 1rem
+    text-align: center
+    h3
+        font-size: 3rem
+        color: $color-title
+    p
+        width: 50%
+        color: $color-text
+
+.user
+    @include flex-items-center
+    flex-direction: column
+    justify-content: space-around
+    @include mobile
+        padding: 1rem
+        width: 100%
+
+.users
+    @include flex-items-center
+    justify-content: flex-start
+    flex-direction: column
+    gap: 2rem
+    padding-top: 10rem
+    @include mobile
+        padding: 1rem

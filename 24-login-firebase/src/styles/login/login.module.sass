@@ -1,0 +1,41 @@
+@import '../_mixins'
+@import '../_variables'
+
+.logo
+    @include logo
+    text-align: center
+
+.text
+    font-size: 1.5rem
+
+.link_to
+    @include mobile
+        text-align: center
+
+.container_form
+    width: 100%
+    padding: 2rem
+    @include flex-center
+    flex-direction: column
+    gap: 1rem
+
+    label
+        @include flex-items-center
+        justify-content: space-between
+        gap: 1rem
+        width: 450px
+        @include mobile
+            width: 100%
+            flex-direction: column
+        input
+            @include transition-all
+            border-radius: 5px
+            padding: 5px 10px
+            font-size: 1.2rem
+            outline: none
+            border: solid 1px $color-secondary
+            background-color: rgba(0, 0, 0, .1)
+            &:focus
+                border-color: $color-primary
+    button
+        @include button
