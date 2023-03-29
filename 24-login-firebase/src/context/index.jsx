@@ -95,21 +95,21 @@ let AppProvider = ({ children }) => {
     };
 
     let handleSignOut = async () => {
+        handleSetRedirect(true);
         dispatch(setUserInfos({}));
         removeCookie('uid');
         await signOut();
-        handleSetRedirect(true);
         return window.location.reload(false);
     };
 
     let handleDeleteUser = async () => {
+        handleSetRedirect(true);
         handleSetLoading(true);
         await deleteUserDB(user.uid);
         await deleteImageUserDB(user.uid);
         await deleteUser();
         dispatch(setUserInfos({}));
         removeCookie('uid');
-        handleSetRedirect(true);
         handleSetLoading(false);
         return window.location.reload(false);
     };
