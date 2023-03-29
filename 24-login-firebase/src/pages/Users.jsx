@@ -7,6 +7,7 @@ import Loading from '../components/Loading';
 import Content from '../components/Content';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import { Navigate } from 'react-router-dom';
 
 let Users = () => {
     let { state } = useContext(AppContext);
@@ -25,6 +26,10 @@ let Users = () => {
               })
             : null;
     };
+
+    if (state.redirect) {
+        return <Navigate to={'/login'} />;
+    }
 
     return (
         <>

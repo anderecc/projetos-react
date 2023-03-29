@@ -3,6 +3,7 @@ export let initialState = {
     user: {},
     users: [],
     errors: {},
+    redirect: false,
 };
 
 let reducer = (state, action) => {
@@ -15,6 +16,8 @@ let reducer = (state, action) => {
             return { ...state, users: action.payload };
         case 'SET_ERROR':
             return { ...state, errors: { ...state.errors, ...action.payload } };
+        case 'SET_REDIRECT':
+            return { ...state, redirect: action.payload };
 
         default:
             return { ...state };

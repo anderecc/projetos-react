@@ -10,7 +10,13 @@ import {
 import { auth } from '../services/firebaseConfig';
 
 import reducer, { initialState } from '../store/reducers';
-import { setError, setLoading, setUserInfos, setUsers } from '../store/actions';
+import {
+    setError,
+    setLoading,
+    setRedirect,
+    setUserInfos,
+    setUsers,
+} from '../store/actions';
 import getUserDB from '../functions/getUserDB';
 import getUsersDB from '../functions/getUsersDB';
 import setUserDB from '../functions/setUserDB';
@@ -92,6 +98,7 @@ let AppProvider = ({ children }) => {
         dispatch(setUserInfos({}));
         removeCookie('uid');
         await signOut();
+        handleSetRedirect(true);
         return window.location.reload(false);
     };
 
@@ -102,6 +109,7 @@ let AppProvider = ({ children }) => {
         await deleteUser();
         dispatch(setUserInfos({}));
         removeCookie('uid');
+        handleSetRedirect(true);
         handleSetLoading(false);
         return window.location.reload(false);
     };
@@ -135,6 +143,10 @@ let AppProvider = ({ children }) => {
 
     let handleSetError = (value) => {
         return dispatch(setError(value));
+    };
+
+    let handleSetRedirect = (value) => {
+        return dispatch(setRedirect(value));
     };
 
     return (

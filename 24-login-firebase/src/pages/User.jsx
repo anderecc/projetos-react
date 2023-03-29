@@ -8,6 +8,7 @@ import Loading from '../components/Loading';
 import Content from '../components/Content';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import { Navigate } from 'react-router-dom';
 
 let User = () => {
     let { state, handleUpdateUser, handleSetError, handleDeleteUser } =
@@ -104,6 +105,10 @@ let User = () => {
         e.preventDefault();
         return handleDeleteUser();
     };
+
+    if (state.redirect) {
+        return <Navigate to={'/login'} />;
+    }
 
     return (
         <>

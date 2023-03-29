@@ -10,3 +10,7 @@ export let setUsers = (value) => {
 export let setError = (value) => {
     return { type: 'SET_ERROR', payload: value };
 };
+
+export let setRedirect = (value) => {
+    return { type: 'SET_REDIRECT', payload: value };
+};
