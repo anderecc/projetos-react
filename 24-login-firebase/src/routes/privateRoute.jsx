@@ -5,7 +5,7 @@ import { AppContext } from '../context';
 let PrivateRoute = ({ children }) => {
     let { cookies, user } = useContext(AppContext);
 
-    return cookies.uid || user ? children : <Navigate to={'/login'} />;
+    return cookies.uid || user ? children : <Navigate to={'/'} />;
 };
 
 export default PrivateRoute;
