@@ -107,7 +107,7 @@ let User = () => {
     };
 
     if (state.redirect) {
-        return <Navigate to={'/'} />;
+        return <Navigate to={'/login'} />;
     }
 
     return (
