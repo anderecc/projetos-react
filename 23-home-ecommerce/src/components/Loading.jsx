@@ -1,4 +1,4 @@
-import styles from '../styles/loading.module.sass';
+import styles from '../styles/loading/loading.module.sass';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 
 let Loading = () => {

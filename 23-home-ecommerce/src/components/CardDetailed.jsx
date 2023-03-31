@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import cvtCurrency from '../functions/cvtCurrency';
-import styles from '../styles/cardDetailed.module.sass';
+import styles from '../styles/card/cardDetailed.module.sass';
 
 let CardDetailed = ({ props }) => {
     return (

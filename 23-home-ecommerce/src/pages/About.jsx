@@ -1,6 +1,6 @@
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import styles from '../styles/about.module.sass';
+import styles from '../styles/about/about.module.sass';
 
 let About = () => {
     return (
@@ -11,19 +11,17 @@ let About = () => {
                 <section>
                     <h3>Our Story</h3>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Possimus, harum. Adipisci maxime voluptate repellat
-                        nihil nobis beatae neque laboriosam, eligendi quasi
-                        doloremque autem temporibus saepe ipsam, quibusdam
-                        velit, voluptas eaque. Lorem ipsum dolor sit amet
-                        consectetur adipisicing elit. Adipisci voluptatibus
-                        illum sint ratione eum quidem hic, dicta asperiores in
-                        sed nam reiciendis dignissimos reprehenderit commodi,
-                        saepe, ducimus iusto id tenetur! Lorem, ipsum dolor sit
-                        amet consectetur adipisicing elit. Tempora eveniet
-                        laudantium tempore sequi placeat natus voluptas
-                        similique vel ea, cum consequatur quam, illum nesciunt
-                        totam dicta consectetur. Sit, mollitia voluptates.
+                        Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit. Fugiat accusantium sapiente tempora sed dolore
+                        esse deserunt eaque excepturi, delectus error accusamus
+                        vel eligendi, omnis beatae. Quisquam, dicta. Eos quod
+                        quisquam esse recusandae vitae neque dolore, obcaecati
+                        incidunt sequi blanditiis est exercitationem molestiae
+                        delectus saepe odio eligendi modi porro eaque in libero
+                        minus unde sapiente consectetur architecto. Ullam rerum,
+                        nemo iste ex, eaque perspiciatis nisi, eum totam velit
+                        saepe sed quos similique amet. Ex, voluptate accusamus
+                        nesciunt totam vitae esse iste.
                     </p>
                 </section>
             </main>

@@ -1,3 +1,5 @@
+@import '../_mixins'
+
 .container
     display: grid
     min-height: calc( 100vh - 200px )
@@ -5,11 +7,19 @@
     align-items: center
     justify-content: center
     gap: 2rem
-    padding: 8rem 5rem
+    padding: 8rem 3rem
+    @include mobile
+        grid-template-columns: 1fr
+        padding: 2rem
+        justify-items: center
     img
-        width: 550px
-        height: 450px
+
+        width: 100%
+        height: 550px
         border-radius: 10px
+        @include mobile
+            width: 90%
+            height: 350px
     section
         height: 100%
         display: flex
@@ -17,11 +27,15 @@
         justify-content: flex-start
         gap: 2rem
         flex-direction: column
+        @include mobile
+            width: 90%
         h3
             font-size: 3rem
             color: #102A42
             position: relative
             padding-bottom: 1rem
+            @include mobile
+                font-size: 2rem
             &::before
                 position: absolute
                 content: ''
@@ -33,4 +47,4 @@
             color: #1b374a
             font-size: 1rem
             line-height: 2
-            font-weight: 600
+            font-weight: 400

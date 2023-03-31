@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { AppContext } from '../context';
 import { FaCheck } from 'react-icons/fa';
-import styles from '../styles/formFilter.module.sass';
+import styles from '../styles/products/formFilter.module.sass';
 import cvtCurrency from '../functions/cvtCurrency';
 
 let FormFilter = () => {

@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import StarRatings from 'react-star-ratings';
 import { AppContext } from '../context';
 import Loading from './Loading';
-import styles from '../styles/contentProduct.module.sass';
+import styles from '../styles/product/contentProduct.module.sass';
 import cvtCurrency from '../functions/cvtCurrency';
 import { FaCheck } from 'react-icons/fa';
 
@@ -69,12 +69,11 @@ let ContentProduct = () => {
         return (
             <section className={styles.container}>
                 <article className={styles.images_container}>
-                    <aside
+                    <img
                         className={styles.image_hero}
-                        style={{
-                            backgroundImage: `url(${state.product.images[indexHero].url})`,
-                        }}
-                    ></aside>
+                        src={state.product.images[indexHero].url}
+                        alt={state.product.filename}
+                    ></img>
 
                     <div>{renderImages()}</div>
                 </article>

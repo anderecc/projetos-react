@@ -1,3 +1,5 @@
+@import '../_mixins'
+
 .container
     position: relative
 
@@ -10,6 +12,10 @@
         gap: 1rem
         position: sticky
         top: 0
+        @include mobile
+            padding: 0
+            display: grid
+            grid-template-columns: repeat(3, 1fr)
 
     .search
         font-size: 1rem
@@ -18,8 +24,11 @@
         padding: 5px 10px
         background-color: rgba(0, 0, 0, .1)
         outline: none
+        @include mobile
+            grid-column: 1 / 4
         &::placeholder
             letter-spacing: 1px
+
 .title
     font-size: 1.2rem
     color: #102A42
@@ -59,6 +68,8 @@
         align-items: center
         gap: .5rem
         padding: 5px
+        @include mobile
+            flex-wrap: wrap
         span
             user-select: none
             cursor: pointer
@@ -81,13 +92,20 @@
         flex-direction: column
         align-items: flex-start
         gap: .5rem
+        @include mobile
+            input
+                width: 100%
 
 .shipping
     display: flex
     justify-content: space-between
     align-items: center
     gap: 1rem
-
+    @include mobile
+        flex-wrap: wrap
+    input
+        width: 15px
+        height: 15px
 .btn_clear
     padding: 5px 10px
     background-color: #BC3226

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import ContentProduct from '../components/ContentProduct';
 import Header from '../components/Header';
-import styles from '../styles/product.module.sass';
+import styles from '../styles/product/product.module.sass';
 import Footer from '../components/Footer';
 
 let Product = () => {

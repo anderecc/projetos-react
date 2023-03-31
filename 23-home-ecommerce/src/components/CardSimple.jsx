@@ -1,7 +1,7 @@
 import { FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import cvtCurrency from '../functions/cvtCurrency';
-import styles from '../styles/cardSimple.module.sass';
+import styles from '../styles/card/cardSimple.module.sass';
 
 let CardSimple = ({ props }) => {
     return (

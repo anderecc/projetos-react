@@ -3,7 +3,7 @@ import { FaBars, FaThLarge } from 'react-icons/fa';
 import { AppContext } from '../context';
 import CardDetailed from './CardDetailed';
 import CardSimple from './CardSimple';
-import styles from '../styles/contentProducts.module.sass';
+import styles from '../styles/products/contentProducts.module.sass';
 import Loading from './Loading';
 
 let ContentProducts = () => {

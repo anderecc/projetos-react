@@ -1,13 +1,20 @@
+@import '../_mixins'
+
 .container
     width: 100%
-
+    display: flex
+    flex-direction: column
+    gap: 2rem
     .sort_container
         display: flex
         width: 100%
         align-items: center
         justify-content: space-between
-        padding: 0 5rem
+        padding: 0
         gap: 1rem
+        @include mobile
+            padding: 0
+            flex-wrap: wrap
     .buttons_container
         display: flex
         align-items: center
@@ -31,6 +38,8 @@
         font-weight: 500
     hr
         width: 50%
+        @include mobile
+            display: none
     .sort_by
         color: #324d67
         font-weight: 500
@@ -49,11 +58,13 @@
 .products_container
     display: flex
     align-items: flex-start
-    justify-content: flex-start
+    justify-content: center
     gap: 2rem
-    padding: 3rem 5rem
+    padding: 0
     flex-wrap: wrap
-    min-height: 100%
+    min-height: 100vh
+    @include mobile
+        padding: 3rem 0
 
 .products_container.loading
     align-items: center

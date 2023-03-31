@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import { AppContext } from '../context';
 import cvtCurrency from '../functions/cvtCurrency';
-import styles from '../styles/cart.module.sass';
+import styles from '../styles/cart/cart.module.sass';
 import Footer from '../components/Footer';
 
 let Cart = () => {
@@ -115,9 +115,9 @@ let Cart = () => {
                     <section className={styles.content}>
                         <article className={styles.titles}>
                             <h3>Item</h3>
-                            <h3>Price</h3>
+                            <h3 className={styles.price}>Price</h3>
                             <h3>Quantity</h3>
-                            <h3>Subtotal</h3>
+                            <h3 className={styles.subtotal}>Subtotal</h3>
                         </article>
                         <hr />
                         {renderItems()}

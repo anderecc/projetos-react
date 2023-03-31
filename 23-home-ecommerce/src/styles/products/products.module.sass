@@ -1,0 +1,10 @@
+@import '../_mixins'
+
+.container
+    display: flex
+    padding: 2rem 5rem
+    gap: 2rem
+    min-height: calc( 100vh - 200px )
+    @include mobile
+        padding: 2rem
+        flex-direction: column
