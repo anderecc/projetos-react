@@ -9,6 +9,7 @@ import Footer from '../components/Footer';
 
 let Cart = () => {
     let {
+        user,
         state,
         handleGetCart,
         handleEditQtdy,
@@ -150,9 +151,18 @@ let Cart = () => {
                                         </span>
                                     </p>
                                 </div>
-                                <Link to={'#'} className={styles.button}>
-                                    Proceed to checkout
-                                </Link>
+                                {user ? (
+                                    <Link to={'#'} className={styles.button}>
+                                        Proceed to checkout
+                                    </Link>
+                                ) : (
+                                    <Link
+                                        to={'/login'}
+                                        className={styles.button}
+                                    >
+                                        Login
+                                    </Link>
+                                )}
                             </div>
                         </article>
                     </section>

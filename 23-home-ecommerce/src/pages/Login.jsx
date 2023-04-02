@@ -68,7 +68,7 @@ let Login = () => {
     };
 
     if (user) {
-        return <Navigate to={'/'}></Navigate>;
+        return <Navigate to={'/cart'}></Navigate>;
     }
 
     return (
