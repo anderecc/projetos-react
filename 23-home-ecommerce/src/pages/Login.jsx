@@ -80,7 +80,7 @@ let Login = () => {
                     <label>
                         Your e-mail:
                         <input
-                            type="text"
+                            type="email"
                             value={email}
                             onChange={(e) =>
                                 handleSetValues('email', e.target.value)

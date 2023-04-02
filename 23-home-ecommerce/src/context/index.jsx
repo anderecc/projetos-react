@@ -205,7 +205,8 @@ let AppProvider = ({ children }) => {
 
     let handleLogOut = async () => {
         await signOut();
-        return removeCookie('uid');
+        await removeCookie('uid');
+        return window.location.reload(false);
     };
 
     let handleSetRegister = async (value) => {
