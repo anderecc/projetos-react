@@ -32,7 +32,9 @@ let ContentProducts = () => {
                       ) : null;
                   } else if (
                       /** ALL FILTERS */
-                      item.name.toLowerCase().includes(state.search) &&
+                      item.name
+                          .toLowerCase()
+                          .includes(state.search.toLowerCase()) &&
                       state.category === item.category &&
                       state.company === item.company &&
                       item.colors.includes(state.color) &&
@@ -49,7 +51,9 @@ let ContentProducts = () => {
                       ) : null;
                   } else if (
                       /** SEARCH */
-                      item.name.toLowerCase().includes(state.search) &&
+                      item.name
+                          .toLowerCase()
+                          .includes(state.search.toLowerCase()) &&
                       state.category === 'all' &&
                       state.company === 'all' &&
                       state.color === 'all' &&
@@ -66,7 +70,9 @@ let ContentProducts = () => {
                       ) : null;
                   } else if (
                       /** SEARCH + CAT*/
-                      item.name.toLowerCase().includes(state.search) &&
+                      item.name
+                          .toLowerCase()
+                          .includes(state.search.toLowerCase()) &&
                       state.category === item.category &&
                       state.company === 'all' &&
                       state.color === 'all' &&
@@ -83,7 +89,9 @@ let ContentProducts = () => {
                       ) : null;
                   } else if (
                       /** SEARCH + CAT + COM*/
-                      item.name.toLowerCase().includes(state.search) &&
+                      item.name
+                          .toLowerCase()
+                          .includes(state.search.toLowerCase()) &&
                       state.category === item.category &&
                       state.company === item.company &&
                       state.color === 'all' &&
@@ -100,7 +108,9 @@ let ContentProducts = () => {
                       ) : null;
                   } else if (
                       /** SEARCH + CAT + COL*/
-                      item.name.toLowerCase().includes(state.search) &&
+                      item.name
+                          .toLowerCase()
+                          .includes(state.search.toLowerCase()) &&
                       state.category === item.category &&
                       state.company === 'all' &&
                       item.colors.includes(state.color) &&
@@ -117,7 +127,9 @@ let ContentProducts = () => {
                       ) : null;
                   } else if (
                       /** SEARCH + CAT + SHIP*/
-                      item.name.toLowerCase().includes(state.search) &&
+                      item.name
+                          .toLowerCase()
+                          .includes(state.search.toLowerCase()) &&
                       state.category === item.category &&
                       state.company === 'all' &&
                       state.color === 'all' &&
@@ -134,7 +146,9 @@ let ContentProducts = () => {
                       ) : null;
                   } else if (
                       /** SEARCH + CAT + COM + COL*/
-                      item.name.toLowerCase().includes(state.search) &&
+                      item.name
+                          .toLowerCase()
+                          .includes(state.search.toLowerCase()) &&
                       state.category === item.category &&
                       state.company === item.company &&
                       item.colors.includes(state.color) &&
@@ -151,7 +165,9 @@ let ContentProducts = () => {
                       ) : null;
                   } else if (
                       /** SEARCH + CAT + COM + SHIP*/
-                      item.name.toLowerCase().includes(state.search) &&
+                      item.name
+                          .toLowerCase()
+                          .includes(state.search.toLowerCase()) &&
                       state.category === item.category &&
                       state.company === item.company &&
                       state.color === 'all' &&
@@ -168,7 +184,9 @@ let ContentProducts = () => {
                       ) : null;
                   } else if (
                       /** SEARCH + COM*/
-                      item.name.toLowerCase().includes(state.search) &&
+                      item.name
+                          .toLowerCase()
+                          .includes(state.search.toLowerCase()) &&
                       state.category === 'all' &&
                       state.company === item.company &&
                       state.color === 'all' &&
@@ -185,7 +203,9 @@ let ContentProducts = () => {
                       ) : null;
                   } else if (
                       /** SEARCH + COM + COL*/
-                      item.name.toLowerCase().includes(state.search) &&
+                      item.name
+                          .toLowerCase()
+                          .includes(state.search.toLowerCase()) &&
                       state.category === 'all' &&
                       state.company === item.company &&
                       item.colors.includes(state.color) &&
@@ -202,7 +222,9 @@ let ContentProducts = () => {
                       ) : null;
                   } else if (
                       /** SEARCH + COM + SHIP*/
-                      item.name.toLowerCase().includes(state.search) &&
+                      item.name
+                          .toLowerCase()
+                          .includes(state.search.toLowerCase()) &&
                       state.category === 'all' &&
                       state.company === item.company &&
                       state.color === 'all' &&
@@ -219,7 +241,9 @@ let ContentProducts = () => {
                       ) : null;
                   } else if (
                       /** SEARCH + COM + COL + SHIP*/
-                      item.name.toLowerCase().includes(state.search) &&
+                      item.name
+                          .toLowerCase()
+                          .includes(state.search.toLowerCase()) &&
                       state.category === 'all' &&
                       state.company === item.company &&
                       item.colors.includes(state.color) &&
@@ -236,7 +260,9 @@ let ContentProducts = () => {
                       ) : null;
                   } else if (
                       /** SEARCH + COL*/
-                      item.name.toLowerCase().includes(state.search) &&
+                      item.name
+                          .toLowerCase()
+                          .includes(state.search.toLowerCase()) &&
                       state.category === 'all' &&
                       state.company === 'all' &&
                       item.colors.includes(state.color) &&
@@ -253,7 +279,9 @@ let ContentProducts = () => {
                       ) : null;
                   } else if (
                       /** SEARCH + COL + SHIP*/
-                      item.name.toLowerCase().includes(state.search) &&
+                      item.name
+                          .toLowerCase()
+                          .includes(state.search.toLowerCase()) &&
                       state.category === 'all' &&
                       state.company === 'all' &&
                       item.colors.includes(state.color) &&
@@ -270,7 +298,9 @@ let ContentProducts = () => {
                       ) : null;
                   } else if (
                       /** SEARCH + COL + CAT + SHIP*/
-                      item.name.toLowerCase().includes(state.search) &&
+                      item.name
+                          .toLowerCase()
+                          .includes(state.search.toLowerCase()) &&
                       state.category === item.category &&
                       state.company === 'all' &&
                       item.colors.includes(state.color) &&
@@ -287,7 +317,9 @@ let ContentProducts = () => {
                       ) : null;
                   } else if (
                       /** SEARCH + SHIP*/
-                      item.name.toLowerCase().includes(state.search) &&
+                      item.name
+                          .toLowerCase()
+                          .includes(state.search.toLowerCase()) &&
                       state.category === 'all' &&
                       state.company === 'all' &&
                       state.color === 'all' &&
