@@ -48,3 +48,7 @@ export let setCart = (value) => {
 export let setProduct = (value) => {
     return { type: 'SET_PRODUCT', payload: value };
 };
+
+export let setError = (value) => {
+    return { type: 'SET_ERROR', payload: value };
+};

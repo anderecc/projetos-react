@@ -11,6 +11,7 @@ export let initialState = {
     product: [],
     cart: [],
     typeCard: 'detailed',
+    errors: [],
 };
 
 let reducer = (state: initialState, action) => {
@@ -51,6 +52,8 @@ let reducer = (state: initialState, action) => {
             return { ...state, typeCard: action.payload };
         case 'SET_PRODUCT':
             return { ...state, product: action.payload };
+        case 'SET_ERROR':
+            return { ...state, errors: { ...action.payload } };
 
         default:
             return { ...state };

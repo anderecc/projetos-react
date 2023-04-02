@@ -1,4 +1,11 @@
 import { createContext, useEffect, useReducer } from 'react';
+import {
+    useAuthState,
+    useCreateUserWithEmailAndPassword,
+    useSignInWithEmailAndPassword,
+    useSignOut,
+} from 'react-firebase-hooks/auth';
+
 import { getData } from '../functions/getData';
 import { getSingleProduct } from '../functions/getSingleProduct';
 import { setSort } from '../functions/setSort';
@@ -10,6 +17,7 @@ import {
     setColor,
     setCompany,
     setData,
+    setError,
     setLoading,
     setPrice,
     setProduct,
@@ -19,16 +27,40 @@ import {
     setTypeCard,
 } from '../store/actions';
 import reducer, { initialState } from '../store/reducers';
+import { auth } from '../services/configFirebase';
+import { useCookies } from 'react-cookie';
 
 export let AppContext = createContext();
 
 let AppProvider = ({ children }) => {
     let [state, dispacth] = useReducer(reducer, initialState);
+    const [cookies, setCookie, removeCookie] = useCookies(['uid']);
+    const [signInWithEmailAndPassword, userLogin, loadingLogin, errorLogin] =
+        useSignInWithEmailAndPassword(auth);
+    const [user, loadingAuth, errorAuth] = useAuthState(auth);
+    const [signOut, loading, error] = useSignOut(auth);
+    const [
+        createUserWithEmailAndPassword,
+        userRegister,
+        loadingRegister,
+        errorRegister,
+    ] = useCreateUserWithEmailAndPassword(auth);
 
     useEffect(() => {
         getData(dispacth, setData, setLoading);
         document.title = 'Coooder Shop';
-    }, []);
+        if (user) handleSetUser(user.uid);
+        if (errorLogin)
+            handleSetError({
+                ...state.errors,
+                login: { firebase: 'E-mail or password invalid.' },
+            });
+        if (errorRegister)
+            handleSetError({
+                ...state.errors,
+                register: { firebase: errorRegister.message },
+            });
+    }, [user, errorLogin, errorRegister]);
 
     let handleSetCategory = (value) => {
         return dispacth(setCategory(value));
@@ -157,9 +189,36 @@ let AppProvider = ({ children }) => {
         return dispacth(setTypeCard(value));
     };
 
+    let handleSetError = (value) => {
+        return dispacth(setError(value));
+    };
+
+    let handleSetLogin = async (value) => {
+        handleSetLoading(true);
+        await signInWithEmailAndPassword(value.email, value.password);
+        return handleSetLoading(false);
+    };
+
+    let handleSetUser = (uid) => {
+        setCookie('uid', user.uid);
+    };
+
+    let handleLogOut = async () => {
+        await signOut();
+        return removeCookie('uid');
+    };
+
+    let handleSetRegister = async (value) => {
+        handleSetLoading(true);
+        await createUserWithEmailAndPassword(value.email, value.password);
+        return handleSetLoading(false);
+    };
+
     return (
         <AppContext.Provider
             value={{
+                user,
+                cookies,
                 state,
                 handleSetCategory,
                 handleSetCompany,
@@ -178,6 +237,10 @@ let AppProvider = ({ children }) => {
                 handleDeletProduct,
                 handleSetTypeCard,
                 handleSetProduct,
+                handleSetError,
+                handleSetLogin,
+                handleLogOut,
+                handleSetRegister,
             }}
         >
             {children}

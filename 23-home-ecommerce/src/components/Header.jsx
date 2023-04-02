@@ -1,9 +1,17 @@
 import { Link } from 'react-router-dom';
-import { FaBars, FaShoppingCart, FaTimes, FaUserAlt } from 'react-icons/fa';
+import {
+    FaBars,
+    FaShoppingCart,
+    FaTimes,
+    FaUserAlt,
+    FaUserSlash,
+} from 'react-icons/fa';
 import styles from '../styles/header.module.sass';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AppContext } from '../context';
 
 let Header = ({ home, about, products }) => {
+    let { user, handleLogOut } = useContext(AppContext);
     let [menu, setMenu] = useState(false);
 
     return (
@@ -51,11 +59,19 @@ let Header = ({ home, about, products }) => {
                             Cart <FaShoppingCart></FaShoppingCart>
                         </Link>
                     </li>
-                    <li>
-                        <Link to={'#'}>
-                            Login <FaUserAlt></FaUserAlt>
-                        </Link>
-                    </li>
+                    {user ? (
+                        <li>
+                            <Link to={'/'} onClick={handleLogOut}>
+                                LogOut <FaUserSlash></FaUserSlash>
+                            </Link>
+                        </li>
+                    ) : (
+                        <li>
+                            <Link to={'/login'}>
+                                Login <FaUserAlt></FaUserAlt>
+                            </Link>
+                        </li>
+                    )}
                 </ul>
             </nav>
         </header>

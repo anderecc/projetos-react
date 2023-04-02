@@ -8,6 +8,8 @@ import Cart from './pages/Cart';
 import Product from './pages/Product';
 import Products from './pages/Products';
 import './styles/global.sass';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 let router = createBrowserRouter([
     { path: '/', element: <App /> },
@@ -21,6 +23,8 @@ let router = createBrowserRouter([
     },
     { path: '/product/:productId', element: <Product></Product> },
     { path: '/cart', element: <Cart></Cart> },
+    { path: '/login', element: <Login></Login> },
+    { path: '/register', element: <Register></Register> },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
