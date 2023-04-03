@@ -10,8 +10,8 @@ import styles from '../styles/header.module.sass';
 import { useContext, useState } from 'react';
 import { AppContext } from '../context';
 
-let Header = ({ home, about, products }) => {
-    let { user, handleLogOut } = useContext(AppContext);
+let Header = ({ home, about, products, checkout }) => {
+    let { user, handleLogOut, state } = useContext(AppContext);
     let [menu, setMenu] = useState(false);
 
     return (
@@ -52,11 +52,17 @@ let Header = ({ home, about, products }) => {
                     <li className={products ? styles.active : ''}>
                         <Link to={'/products'}>Products</Link>
                     </li>
+                    {user ? (
+                        <li className={checkout ? styles.active : ''}>
+                            <Link to={'/payment'}>Checkout</Link>
+                        </li>
+                    ) : null}
                 </ul>
                 <ul className={styles.cart_login_content}>
                     <li>
-                        <Link to={'/cart'}>
-                            Cart <FaShoppingCart></FaShoppingCart>
+                        <Link to={'/cart'} className={styles.cart_item}>
+                            Cart <FaShoppingCart></FaShoppingCart>{' '}
+                            <span>{state.cart ? state.cart.length : 0}</span>
                         </Link>
                     </li>
                     {user ? (

@@ -1,0 +1,44 @@
+.container
+    min-height: calc( 100vh - 200px)
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    gap: 2rem
+    padding: 2rem
+    section
+        display: flex
+        align-items: center
+        justify-content: space-between
+        flex-direction: column
+        gap: 2rem
+        input
+            border: 1px solid transparent
+            outline: none
+            background-color: rgba(0, 0, 0, .1)
+            padding: 5px 10px
+            border-radius: 5px
+            font-size: 1rem
+            transition: all .3s
+            &:focus
+                border-color: #ab7a5f
+
+        .title
+            font-size: 2rem
+            text-align: center
+            color: #102A42
+            font-weight: bold
+
+.button
+    padding: 10px 15px
+    color: white
+    border: none
+    cursor: pointer
+    border-radius: 5px
+    background-color: #AB7A5F
+    font-weight: 400
+    text-transform: uppercase
+    transition: all .3s
+    &:hover
+        background-color: #ab7a5fb7
+        color: rgba(0, 0, 0, .7)

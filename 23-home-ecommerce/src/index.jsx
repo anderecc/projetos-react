@@ -10,6 +10,7 @@ import Products from './pages/Products';
 import './styles/global.sass';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Payment from './pages/Payment';
 
 let router = createBrowserRouter([
     { path: '/', element: <App /> },
@@ -25,6 +26,7 @@ let router = createBrowserRouter([
     { path: '/cart', element: <Cart></Cart> },
     { path: '/login', element: <Login></Login> },
     { path: '/register', element: <Register></Register> },
+    { path: '/payment', element: <Payment></Payment> },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

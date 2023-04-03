@@ -5,8 +5,8 @@
     display: flex
     align-items: center
     justify-content: space-between
-    padding: 0 5rem
-    font-size: 1.3rem
+    padding: 0 3rem
+    font-size: 1.2rem
     @include mobile
         padding: 0
     .nav_content
@@ -101,3 +101,19 @@
 .nav_content.menu_open
     @include mobile
         top: 100px
+
+.cart_item
+    position: relative
+    span
+        position: absolute
+        top: -50%
+        right: -10%
+        color: white
+        background-color: #AB7A5F
+        border-radius: 50%
+        height: 20px
+        width: 20px
+        display: flex
+        text-align: center
+        align-items: center
+        justify-content: center

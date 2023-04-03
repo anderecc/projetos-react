@@ -49,6 +49,7 @@ let AppProvider = ({ children }) => {
     useEffect(() => {
         getData(dispacth, setData, setLoading);
         document.title = 'Coooder Shop';
+        handleGetCart();
         if (user) handleSetUser(user.uid);
         if (errorLogin)
             handleSetError({
@@ -60,7 +61,13 @@ let AppProvider = ({ children }) => {
                 ...state.errors,
                 register: { firebase: errorRegister.message },
             });
-    }, [user, errorLogin, errorRegister]);
+
+        if (loadingAuth) {
+            handleSetLoading(true);
+        } else {
+            handleSetLoading(false);
+        }
+    }, [user, errorLogin, errorRegister, loadingAuth]);
 
     let handleSetCategory = (value) => {
         return dispacth(setCategory(value));

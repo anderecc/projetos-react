@@ -152,7 +152,10 @@ let Cart = () => {
                                     </p>
                                 </div>
                                 {user ? (
-                                    <Link to={'#'} className={styles.button}>
+                                    <Link
+                                        to={'/payment'}
+                                        className={styles.button}
+                                    >
                                         Proceed to checkout
                                     </Link>
                                 ) : (
