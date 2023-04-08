@@ -24,16 +24,20 @@ import {
 
 const storage = getStorage();
 
-let setOrUpdateImageUserBD = async (uid, fileImage) => {
-    const storageRef = ref(storage, `users/${uid}/${uid}-image.jpeg`);
-    if (fileImage) {
-        await uploadBytes(storageRef, fileImage);
-    } else {
-        await fetch('./images/profile.png').then(async (res) => {
-            let blob = await res.blob();
-            uploadBytes(storageRef, blob);
-        });
-    }
+let setOrUpdateImageUserBD = (uid, fileImage) => {
+    return async (dispatch) => {
+        const storageRef = ref(storage, `users/${uid}/${uid}-image.jpeg`);
+        if (fileImage) {
+            await uploadBytes(storageRef, fileImage);
+            dispatch(getUserDB(uid));
+        } else {
+            let blob = await fetch('./images/profile.png').then(async (res) =>
+                res.blob()
+            );
+            await uploadBytes(storageRef, blob);
+            dispatch(getUserDB(uid));
+        }
+    };
 };
 
 export let setUserAuth = (user) => {
@@ -83,7 +87,6 @@ export let register = (data) => {
 
                 // Signed in
                 dispatch(setLoading(false));
-                dispatch(getUserDB(user.uid));
                 dispatch(getUsersDB());
                 dispatch({ type: 'SET_USER_UID', payload: user.uid });
                 // ...
@@ -152,7 +155,6 @@ export let updateUserDB = (uid, fileImage, data) => {
             await updateDoc(doc(db, 'users', uid), data);
             await setOrUpdateImageUserBD(uid, fileImage);
             dispatch(setLoading(false));
-            dispatch(getUserDB(uid));
             dispatch(getUsersDB());
             // 'file' comes from the Blob or File API
         } else {
