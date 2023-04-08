@@ -22,7 +22,7 @@ import {
     uploadBytes,
 } from 'firebase/storage';
 
-const storage = await getStorage();
+const storage = getStorage();
 
 let setOrUpdateImageUserBD = async (uid, fileImage) => {
     const storageRef = ref(storage, `users/${uid}/${uid}-image.jpeg`);
