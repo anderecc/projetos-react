@@ -83,6 +83,7 @@ export let register = (data) => {
 
                 // Signed in
                 dispatch(setLoading(false));
+                dispatch(getUserDB(user.uid));
                 dispatch(getUsersDB());
                 dispatch({ type: 'SET_USER_UID', payload: user.uid });
                 // ...
