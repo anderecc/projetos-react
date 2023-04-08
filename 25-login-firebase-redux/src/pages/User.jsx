@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import styles from '../styles/user/user.module.sass';
 import inputCondition from '../functions/inputCondition';
 import {
     deleteUserDB,
+    getUserDB,
     setError,
     updateUserDB,
 } from '../store/actions/userActions';
@@ -17,6 +18,10 @@ import Header from '../components/Header';
 let User = () => {
     let user = useSelector((state) => state.user);
     let dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getUserDB(user.user_uid));
+    }, []);
 
     let [newName, setNewName] = useState('');
     let [fileImage, setFileImage] = useState('');

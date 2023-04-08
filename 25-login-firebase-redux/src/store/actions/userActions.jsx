@@ -77,13 +77,12 @@ export let register = (data) => {
         dispatch(setLoading(true));
         createUserWithEmailAndPassword(auth, data.email, data.password)
             .then(async (userCredential) => {
-                const user = await userCredential.user;
+                const user = userCredential.user;
                 await setOrUpdateImageUserBD(user.uid);
                 await setDoc(doc(collection(db, 'users'), user.uid), data);
 
                 // Signed in
                 dispatch(setLoading(false));
-                dispatch(getUserDB(user.uid));
                 dispatch(getUsersDB());
                 dispatch({ type: 'SET_USER_UID', payload: user.uid });
                 // ...
