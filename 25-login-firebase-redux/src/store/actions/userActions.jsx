@@ -82,10 +82,10 @@ export let register = (data) => {
         createUserWithEmailAndPassword(auth, data.email, data.password)
             .then(async (userCredential) => {
                 const user = userCredential.user;
-                await setOrUpdateImageUserBD(user.uid);
                 await setDoc(doc(collection(db, 'users'), user.uid), data);
 
                 // Signed in
+                await dispatch(setOrUpdateImageUserBD(user.uid));
                 dispatch(setLoading(false));
                 dispatch(getUsersDB());
                 dispatch({ type: 'SET_USER_UID', payload: user.uid });
@@ -153,7 +153,7 @@ export let updateUserDB = (uid, fileImage, data) => {
         dispatch(setLoading(true));
         if (fileImage) {
             await updateDoc(doc(db, 'users', uid), data);
-            await setOrUpdateImageUserBD(uid, fileImage);
+            await dispatch(setOrUpdateImageUserBD(uid, fileImage));
             dispatch(setLoading(false));
             dispatch(getUsersDB());
             // 'file' comes from the Blob or File API
