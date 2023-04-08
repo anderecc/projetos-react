@@ -115,14 +115,12 @@ export let getUserDB = (uid) => {
         await getDownloadURL(ref(storage, `users/${uid}/${uid}-image.jpeg`))
             .then((res) => {
                 user = { ...user, image: res };
-                dispatch(setLoading(false));
-                dispatch({ type: 'SET_USER_INFOS', payload: user });
             })
             .catch(() => {
                 console.log('error');
-                user = { ...user, image: './images/profile.png' };
-                dispatch({ type: 'SET_USER_INFOS', payload: user });
             });
+        dispatch(setLoading(false));
+        dispatch({ type: 'SET_USER_INFOS', payload: user });
     };
 };
 
