@@ -29,9 +29,10 @@ let setOrUpdateImageUserBD = async (uid, fileImage) => {
     if (fileImage) {
         await uploadBytes(storageRef, fileImage);
     } else {
-        await fetch('./images/profile.png').then((res) =>
-            uploadBytes(storageRef, res.blob())
-        );
+        await fetch('./images/profile.png').then(async (res) => {
+            let blob = await res.blob();
+            uploadBytes(storageRef, blob);
+        });
     }
 };
 
