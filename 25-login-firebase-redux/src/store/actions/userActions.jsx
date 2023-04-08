@@ -118,8 +118,10 @@ export let getUserDB = (uid) => {
                 dispatch(setLoading(false));
                 dispatch({ type: 'SET_USER_INFOS', payload: user });
             })
-            .catch((error) => {
-                console.log(error);
+            .catch(() => {
+                console.log('error');
+                user = { ...user, image: './images/profile.png' };
+                dispatch({ type: 'SET_USER_INFOS', payload: user });
             });
     };
 };
