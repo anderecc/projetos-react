@@ -1,0 +1,99 @@
+@import '_mixins'
+@import '_variables'
+
+.container
+    width: 100%
+    height: 85px
+    display: grid
+    align-items: center
+    padding: 0 2rem
+    gap: 1rem
+    grid-template-columns: 1fr 2fr
+    box-shadow: 3px 3px 5px black
+    background-color: white
+    @include mobile
+        padding: 0
+        @include flex-items-center
+        position: relative
+        justify-content: space-between
+    .logo
+        @include logo
+    .links_content
+        @include flex-items-center
+        padding: 1rem
+        justify-content: space-between
+        @include mobile
+            z-index: 2
+            position: absolute
+            left: 0
+            right: 0
+            margin: auto
+            gap: 2rem
+            background-color: rgba(0, 0, 0, .9)
+            flex-direction: column
+            transition: top .5s
+        .links_page, .links_user
+            @include flex-center
+            gap: 1rem
+            li
+                a
+                    padding: .5rem 1rem
+                    font-size: 1.2rem
+                    font-weight: 500
+                    color: $color-link
+                    @include transition-all
+                    position: relative
+                    @include mobile
+                        color: $color-primary
+                    &::before
+                        content: ''
+                        border: 1px solid transparent
+                        position: absolute
+                        bottom: 0
+                        left: 0
+                        right: 0
+                        width: 0
+                        margin: auto
+                        @include transition-all
+                    &:hover
+                        color: $color-link-hover
+                        &::before
+                            width: 60%
+                            border-color: $color-primary
+        .links_page
+            @include mobile
+                flex-direction: column
+.btn_menu
+    display: none
+    @include mobile
+        @include flex-center
+        border: none
+        background-color: transparent
+        cursor: pointer
+        svg
+            width: 40px
+            height: 40px
+            color: $color-link
+            @include transition-all
+        &:hover
+            svg
+                color: $color-link-hover
+            &:active
+                transform: scale(.95)
+
+.links_content.open
+    @include mobile
+        top: 85px
+.links_content.close
+    @include mobile
+        top: -100vh
+
+.content
+    @include mobile
+        background-color: white
+        width: 100%
+        @include flex-items-center
+        justify-content: space-between
+        z-index: 10
+        padding: 0 2rem
+        height: 85px

@@ -1,0 +1,33 @@
+@import '../_mixins'
+@import '../_variables'
+
+.container
+    width: 100%
+    height: calc( 100vh - 135px - 4rem )
+    @include flex-center
+    position: relative
+
+    span
+        font-size: 2rem
+    p
+        width: 20rem
+        height: 20rem
+        position: absolute
+        overflow: hidden
+        svg
+            position: absolute
+            width: 5rem
+            height: 5rem
+            color: $color-green
+            top: 0
+            bottom: 0
+            margin: auto
+            transform: rotate(90deg)
+            animation: rocket .8s infinite linear
+
+@keyframes rocket
+    0%
+        transform: translateX(-100%) rotate(90deg)
+
+    100%
+        transform: translateX(500%) rotate(90deg)
