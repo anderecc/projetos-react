@@ -29,14 +29,13 @@ let setOrUpdateImageUserBD = (uid, fileImage) => {
         const storageRef = ref(storage, `users/${uid}/${uid}-image.jpeg`);
         if (fileImage) {
             await uploadBytes(storageRef, fileImage);
-            dispatch(getUserDB(uid));
         } else {
             let blob = await fetch('./images/profile.png').then(async (res) =>
                 res.blob()
             );
             await uploadBytes(storageRef, blob);
-            dispatch(getUserDB(uid));
         }
+        dispatch(getUserDB(uid));
     };
 };
 
