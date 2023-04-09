@@ -30,11 +30,11 @@ let User = () => {
                     <p className={styles.name}>
                         Nome: <span>{user.user.name}</span>
                     </p>
-                    <p className={styles.email}>
-                        Email: <span>{user.user.email}</span>
-                    </p>
                     <p className={styles.cep}>
                         Sobrenome: <span>{user.user.lastName}</span>
+                    </p>
+                    <p className={styles.email}>
+                        Email: <span>{user.user.email}</span>
                     </p>
                 </div>
                 <div

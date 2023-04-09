@@ -46,9 +46,9 @@ export let login = (email, password) => {
             .then(async (userCredential) => {
                 const user = userCredential.user;
 
+                await dispatch(setUserUID(user.uid));
                 await dispatch(getUserDB(user.uid));
                 await dispatch(getUsersDB());
-                await dispatch(setUserUID(user.uid));
 
                 dispatch(setLoading(false));
             })
