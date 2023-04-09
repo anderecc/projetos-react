@@ -28,12 +28,12 @@ export let setUserAuth = (user) => {
     return async (dispatch, getState) => {
         let state = getState();
         if (state.user.register) {
-            await dispatch(getUsersDB());
             await dispatch(setUserUID(user.uid));
+            await dispatch(getUsersDB());
         } else {
+            await dispatch(setUserUID(user.uid));
             await dispatch(getUserDB(user.uid));
             await dispatch(getUsersDB());
-            await dispatch(setUserUID(user.uid));
         }
     };
 };
@@ -145,9 +145,9 @@ export let getUserDB = (uid) => {
         let user = userData ? userData.data() : {};
 
         await getDownloadURL(ref(storage, `users/${uid}/${uid}-image.jpeg`))
-            .then((res) => {
+            .then(async (res) => {
                 user = { ...user, image: res };
-                dispatch({ type: 'SET_USER_INFOS', payload: user });
+                await dispatch({ type: 'SET_USER_INFOS', payload: user });
                 dispatch(setLoading(false));
             })
             .catch(() => {
@@ -211,7 +211,7 @@ export let deleteUserDB = (uid) => {
             .then(() => {
                 dispatch(setLoading(false));
 
-                dispatch(setUserUID());
+                dispatch(setUserUID(''));
 
                 return window.location.reload(false);
             })

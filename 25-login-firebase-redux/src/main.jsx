@@ -6,6 +6,9 @@ import { Provider } from 'react-redux';
 import storeConfig from './store/storeConfig';
 import AuthProvider from './context/AuthProvider';
 
+document.title = 'Coooder Users';
+document.documentElement.lang = 'pt';
+
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         <Provider store={storeConfig}>
