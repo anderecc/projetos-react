@@ -28,12 +28,12 @@ export let setUserAuth = (user) => {
     return async (dispatch, getState) => {
         let state = getState();
         if (state.user.register) {
-            await dispatch({ type: 'SET_USER_UID', payload: user.uid });
             await dispatch(getUsersDB());
+            await dispatch(setUserUID(user.uid));
         } else {
-            await dispatch({ type: 'SET_USER_UID', payload: user.uid });
-            await dispatch(getUsersDB());
             await dispatch(getUserDB(user.uid));
+            await dispatch(getUsersDB());
+            await dispatch(setUserUID(user.uid));
             dispatch(setLoading(false));
         }
     };
@@ -49,7 +49,7 @@ export let login = (email, password) => {
 
                 await dispatch(getUserDB(user.uid));
                 await dispatch(getUsersDB());
-                await dispatch({ type: 'SET_USER_UID', payload: user.uid });
+                await dispatch(setUserUID(user.uid));
 
                 dispatch(setLoading(false));
             })
@@ -81,7 +81,7 @@ export let register = (data) => {
 
                 await dispatch(setUserDB(user.uid, data));
 
-                await dispatch({ type: 'SET_USER_UID', payload: user.uid });
+                await dispatch(setUserUID(user.uid));
                 // ...
             })
             .catch((error) => {
@@ -124,7 +124,7 @@ export let logOut = () => {
     return (dispatch) => {
         signOut(auth)
             .then(async () => {
-                await dispatch({ type: 'SET_USER_UID', payload: '' });
+                await dispatch(setUserUID(''));
                 return window.location.reload(false);
             })
             .catch((error) => {
@@ -177,16 +177,18 @@ export let updateUserDB = (uid, fileImage, data) => {
 
             await updateDoc(doc(db, 'users', uid), data);
 
-            await uploadBytes(storageRef, fileImage).then(() => {
-                dispatch(getUserDB(uid));
-                dispatch(getUsersDB());
-            });
-            dispatch(setLoading(false));
+            await uploadBytes(storageRef, fileImage)
+                .then(async () => {
+                    await dispatch(getUserDB(uid));
+                    await dispatch(getUsersDB());
+                    dispatch(setLoading(false));
+                })
+                .catch(() => dispatch(setLoading(false)));
         } else {
             await updateDoc(doc(db, 'users', uid), data);
 
-            dispatch(getUserDB(uid));
-            dispatch(getUsersDB());
+            await dispatch(getUserDB(uid));
+            await dispatch(getUsersDB());
 
             dispatch(setLoading(false));
         }
@@ -206,7 +208,7 @@ export let deleteUserDB = (uid) => {
             .then(() => {
                 dispatch(setLoading(false));
 
-                dispatch({ type: 'SET_USER_UID', payload: '' });
+                dispatch(setUserUID());
 
                 return window.location.reload(false);
             })
@@ -214,6 +216,12 @@ export let deleteUserDB = (uid) => {
                 dispatch(setLoading(false));
                 console.log(error);
             });
+    };
+};
+
+export let setUserUID = (value) => {
+    return (dispatch) => {
+        dispatch({ type: 'SET_USER_UID', payload: value });
     };
 };
 
