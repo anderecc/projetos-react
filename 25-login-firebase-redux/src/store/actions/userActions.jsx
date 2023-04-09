@@ -34,7 +34,6 @@ export let setUserAuth = (user) => {
             await dispatch(getUserDB(user.uid));
             await dispatch(getUsersDB());
             await dispatch(setUserUID(user.uid));
-            dispatch(setLoading(false));
         }
     };
 };
@@ -112,11 +111,15 @@ export let setUserDB = (uid, data) => {
         let blob = await fetch('./images/profile.png').then((res) =>
             res.blob()
         );
-        await uploadBytes(storageRef, blob).then(async () => {
-            await dispatch(getUserDB(uid));
-            dispatch({ type: 'REGISTER', payload: false });
-        });
-        dispatch(setLoading(false));
+        await uploadBytes(storageRef, blob)
+            .then(async () => {
+                await dispatch(getUserDB(uid));
+                dispatch({ type: 'REGISTER', payload: false });
+                dispatch(setLoading(false));
+            })
+            .catch(() => {
+                dispatch(setLoading(false));
+            });
     };
 };
 
