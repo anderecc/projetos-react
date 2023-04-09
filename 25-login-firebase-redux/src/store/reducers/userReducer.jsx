@@ -4,6 +4,7 @@ let initialState = {
     user: {},
     users: [],
     errors: {},
+    register: false,
 };
 
 let userReducer = (state = initialState, action) => {
@@ -18,7 +19,8 @@ let userReducer = (state = initialState, action) => {
             return { ...state, users: action.payload };
         case 'SET_ERROR':
             return { ...state, errors: { ...state.errors, ...action.payload } };
-
+        case 'REGISTER':
+            return { ...state, register: action.payload };
         default:
             return { ...state };
     }

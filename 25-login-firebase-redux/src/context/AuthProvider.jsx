@@ -18,8 +18,9 @@ let AuthProvider = ({ children }) => {
                 } catch (error) {
                     console.log(error);
                 }
+            } else {
+                dispatch(setLoading(false));
             }
-            dispatch(setLoading(false));
         });
     }, []);
 
